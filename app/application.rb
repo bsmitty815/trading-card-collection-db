@@ -1,28 +1,29 @@
+
 class Application
     def call(env)
-      response = Rack::Response.new
-      request = Rack::Request.new(env)
+      resp = Rack::Response.new
+      req = Rack::Request.new(env)
   
         # handle all routes and send appropriate responses
 
 
         #POST
-        if req.patch.match(/cards/) && req.post?
+        #if req.path.match(/cards/) && req.post?
 
 
 
         #DELETE
-        elsif req.patch.match(/cards/) && req.delete?
+        #elsif req.path.match(/cards/) && req.delete?
 
 
 
         #PATCH
-        elsif req.patch.match(/cards/) && req.post?
+        #elsif req.path.match(/cards/) && req.post?
 
 
 
         #GET
-        elsif req.patch.match(/cards/) && req.get?
+        if req.path.match(/cards/) && req.get?
             return [200, {"Content-Type" => "application/json"}, [{message: "request successful", cards: Card.render_all}.to_json]]
 
         else
