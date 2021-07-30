@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_07_30_173040) do
   end
 
   create_table "collections", force: :cascade do |t|
-    t.text "type"
+    t.text "card_type"
   end
 
 end
