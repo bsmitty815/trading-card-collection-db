@@ -21,3 +21,5 @@ gem "rack", "~> 2.2"
 gem "rack-cors", "~> 1.1"
 
 gem "shotgun", "~> 0.9.2"
+
+#running shotgun to run the back-end
