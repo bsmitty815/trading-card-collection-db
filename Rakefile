@@ -6,6 +6,6 @@ require "sinatra/activerecord/rake"
 #this will create a description so when you are in the terminal using rake and pry
 desc 'start pry console'
 task :console do
-    ActiveRecord::Base.logged = Logger.new(STDOUT)
+    ActiveRecord::Base.logger = Logger.new(STDOUT)
     Pry.Start
 end
