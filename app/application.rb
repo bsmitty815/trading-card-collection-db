@@ -8,7 +8,13 @@ class Application
 
 
         #POST
-        #if req.path.match(/cards/) && req.post?
+        if req.path.match(/cards/) && req.post?
+          binding.pry
+          hash = JSON.parse(req.body.read) #we get the data inputted parse it so ruby can read it
+          newCard = Card.create(hash)
+
+          return [200, {"Content-Type" => "application/json"}, [{message: "Card successfully created", card: newCard}.to_json]]
+
 
 
 
@@ -23,7 +29,7 @@ class Application
 
 
         #GET
-        if req.path.match(/cards/) && req.get?
+        elsif req.path.match(/cards/) && req.get?
             return [200, {"Content-Type" => "application/json"}, [{message: "request successful", cards: Card.render_all}.to_json]]
 
         else

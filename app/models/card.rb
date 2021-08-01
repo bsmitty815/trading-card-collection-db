@@ -7,11 +7,12 @@ class Card < ActiveRecord::Base
         self.all.map do |c|
             #breaking down what i want to send through to front-end
             {
+                id: c.id,
                 name: c.name,
                 image: c.image,
                 year: c.year,
                 description: c.description,
-                collection: c.collection
+                collection: c.collection.card_type
 
             }
         end
