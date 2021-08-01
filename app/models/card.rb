@@ -12,9 +12,10 @@ class Card < ActiveRecord::Base
                 image: c.image,
                 year: c.year,
                 description: c.description,
-                collection: c.collection.card_type
+                collection: c.collection
 
             }
         end
     end
+
 end
