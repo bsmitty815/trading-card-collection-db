@@ -8,6 +8,7 @@ p = Collection.new(card_type: "Pokemon")
 s = Collection.new(card_type: "Soccer")
 h = Collection.new(card_type: "Hockey")
 b = Collection.new(card_type: "Basketball")
+ba = Collection.new(card_type: "Baseball")
 
 
 

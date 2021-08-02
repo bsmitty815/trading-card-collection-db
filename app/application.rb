@@ -14,7 +14,7 @@ class Application
 
           hash = JSON.parse(req.body.read) #we get the data inputted parse it so ruby can read it
           cardCollection = Collection.find_by(card_type: hash["collection"])
-          #binding.pry
+         
           newCard = Card.create({
             
             name: hash["name"],
