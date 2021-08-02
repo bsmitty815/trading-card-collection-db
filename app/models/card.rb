@@ -1,7 +1,9 @@
+require "pry"
+
 class Card < ActiveRecord::Base
     belongs_to :collection
 
-
+    
     #render the card to send as get request
     def self.render_all
         self.all.map do |c|
@@ -17,5 +19,7 @@ class Card < ActiveRecord::Base
             }
         end
     end
+
+
 
 end

@@ -5,11 +5,11 @@ require_relative "./config/environment.rb"
 
 use Rack::Cors do
   allow do
-    origins '*' # can also put like origins - 'http://localhost:3001' - and only allow that domain to send a request
-    resource '/*', headers: :any, methods: [:get, :post, :patch, :put, :delete]
+    origins '*' # can also put like origins - 'http://localhost:3000' - and only allow that domain to send a request
+    resource '/*', headers: :any, methods: [:get, :post, :patch, :put, :delete] # headers: :any, methods: [:get, :post, :patch, :put, :delete]
   end
 end
 
-# We'll create the Application class
 
-run Application.new
+
+run app = Application.new
