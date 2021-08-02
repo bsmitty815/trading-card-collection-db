@@ -67,7 +67,7 @@ class Application
 
         #GET
         elsif req.path.match(/cards/) && req.get?
-            return [200, {"Content-Type" => "application/json"}, [{message: "request successful", cards: Card.render_all}.to_json]]
+            return [200, {"Content-Type" => "application/json"}, [{message: "request successful", cards: Card.render_all, collections: Collection.all}.to_json]]
 
         else
 
