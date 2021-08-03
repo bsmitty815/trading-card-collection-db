@@ -61,7 +61,33 @@ class Application
             end
 
         #PATCH
-        #elsif req.path.match(/cards/) && req.patch?
+        elsif req.path.match(/cards/) && req.patch?
+
+          id = req.path.split("/cards/").last.to_i
+
+          card = Card.find_by_id(id)
+
+          if card
+            
+            data = JSON.parse(req.body.read)
+
+            if card.update(data)
+              return [200, {"Content-Type" => "application/json"}, [{message: "card successfully updated", card: card}.to_json]]
+
+            else
+
+              return [422, {"Content-Type" => "application/json"}, [{message: "invalid card"}]]
+
+            end
+          
+          else
+
+            return [404, {"Content-Type" => "application/json"}, [{message: "card not found"}.to_json]]
+
+          end
+
+
+
 
 
 
