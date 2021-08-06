@@ -27,6 +27,6 @@ h.cards.build(name: "Mikhail Vorobyev", image: "https://i.imgur.com/8PxPG1W.jpg"
 h.save
 
 b.save
-
+ba.save
 
 puts "done"
